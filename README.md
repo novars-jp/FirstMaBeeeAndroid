@@ -1,10 +1,8 @@
 # FirstMaBeeeAndroid
 
-200~# FirstMaBeeeAndroid
-
 ## 概要
 
-- とりあえず簡単にMaBeeeを使ってみることを目的としたサンプルプロジェクトです。
+- 簡単に[MaBeeeAndroidSDK](https://github.com/novars-jp/MaBeeeAndroidSDK)を使ってみることを目的としたサンプルプロジェクトです。
 - ここではこのサンプルプロジェクトを最初からつくる手順をご紹介します。
 
 
