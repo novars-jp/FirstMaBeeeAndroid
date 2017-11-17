@@ -15,7 +15,7 @@ repositories {
     maven { url 'http://raw.github.com/novars-jp/MaBeeeAndroidSDK/master/repository/' }
 }
 dependencies {
-    compile 'jp.novars.mabeee.sdk:sdk:1.1'
+    compile 'jp.novars.mabeee.sdk:sdk:1.３'
 }
 ```
 
