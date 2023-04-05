@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    compileSdkVersion 33
     defaultConfig {
         applicationId "jp.novars.firstmabeee"
         minSdkVersion 19
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        targetSdkVersion 33
+        versionCode 2
+        versionName "1.1.0"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
     buildTypes {
         release {
@@ -19,15 +19,23 @@ android {
 }
 
 repositories {
-    maven { url 'http://raw.github.com/novars-jp/MaBeeeAndroidSDK/master/repository/' }
+    maven {
+        name 'Github'
+        url 'https://maven.pkg.github.com/novars-jp/MaBeeeAndroidSDK'
+        credentials {
+            username = System.getenv("GITHUB_PACKAGE_USERNAME")
+            password = System.getenv("GITHUB_PACKAGE_TOKEN")
+        }
+    }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'jp.novars.mabeee.sdk:sdk:1.3'
-    testCompile 'junit:junit:4.12'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'jp.novars.mabeee.sdk:sdk:1.5.0'
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
 }
