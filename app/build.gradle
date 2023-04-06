@@ -22,10 +22,6 @@ repositories {
     maven {
         name 'Github'
         url 'https://maven.pkg.github.com/novars-jp/MaBeeeAndroidSDK'
-        credentials {
-            username = System.getenv("GITHUB_PACKAGE_USERNAME")
-            password = System.getenv("GITHUB_PACKAGE_TOKEN")
-        }
     }
 }
 
@@ -35,7 +31,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'jp.novars.mabeee.sdk:sdk:1.5.0'
+    implementation 'jp.novars.mabeee.sdk:sdk:1.5.1'
     testImplementation 'junit:junit:4.13.2'
     implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
 }
