@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FirstMaBeee.iml" filepath="$PROJECT_DIR$/FirstMaBeee.iml" />
-      <module fileurl="file://$PROJECT_DIR$/FirstMaBeeeAndroid.iml" filepath="$PROJECT_DIR$/FirstMaBeeeAndroid.iml" />
-      <module fileurl="file://$PROJECT_DIR$/FirstMaBeeeAndroid.iml" filepath="$PROJECT_DIR$/FirstMaBeeeAndroid.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/FirstMaBeeeAndroid.iml" filepath="$PROJECT_DIR$/.idea/FirstMaBeeeAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FirstMaBeeeAndroid.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FirstMaBeeeAndroid.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FirstMaBeeeAndroid.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FirstMaBeeeAndroid.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FirstMaBeeeAndroid.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FirstMaBeeeAndroid.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FirstMaBeeeAndroid.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FirstMaBeeeAndroid.app.unitTest.iml" />
     </modules>
   </component>
 </project>

@@ -8,14 +8,19 @@
 
 ## ライブラリのインポート
 
-AndroidStudioで[build.gradle(Module: app)](https://github.com/novars-jp/FirstMaBeeeAndroid/blob/master/app/build.gradle)に以下を追加します。
+AndroidStudioでappモジュールの[build.gradle(Module: app)](https://github.com/novars-jp/FirstMaBeeeAndroid/blob/master/app/build.gradle)に以下を追加します。
 
 ```gradle
+// GithubPackagesを追加
 repositories {
-    maven { url 'http://raw.github.com/novars-jp/MaBeeeAndroidSDK/master/repository/' }
+    maven {
+        url 'https://maven.pkg.github.com/novars-jp/MaBeeeAndroidSDK'
+    }
 }
+
 dependencies {
-    compile 'jp.novars.mabeee.sdk:sdk:1.３'
+    implementation 'jp.novars.mabeee.sdk:sdk:1.5.1'
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
 }
 ```
 
@@ -23,7 +28,7 @@ dependencies {
 
 ### 1. activity_main.xmlのレイアウト編集
 
-Scanボタン1つと、SeekBarをもつ画面を作ります。
+接続開始用Scanボタン1つと、出力調整用SeekBarをもつ画面を作ります。
 
 - [activity_main.xml](https://github.com/novars-jp/FirstMaBeeeAndroid/blob/master/app/src/main/res/layout/activity_main.xml)
 
@@ -35,10 +40,10 @@ Scanボタン1つと、SeekBarをもつ画面を作ります。
 App.getInstance().initializeApp(getApplicationContext());
 ```
 
-- [Appクラス](http://developer.novars.jp/mabeee/android/javadoc/jp/novars/mabeee/sdk/App.html)はこのSDKの中心となるクラスで、Android端末のBluetoothや接続済みのMaBeeeデバイスを管理します。
+- [Appクラス](http://developer.novars.jp/mabeee/android/javadoc/jp/novars/mabeee/sdk/App.html)はこのSDKの中心となるクラスです。 Android端末のBluetoothや接続済みのMaBeeeデバイスを管理します。
 - App.getInstance()でAppクラスのSingletonインスタンスを取得します。
 - AppクラスのinitializeApp(Context context)関数で、Appクラス、ライブラリの初期化を行ないます。
- - これは一般的にはApplicationクラスで最初に呼び出すか、複数回呼び出しても問題ないので、最初のActivityのonCreateなどで呼び出してください。
+- これは一般的にはApplicationクラスで最初に呼び出すか、複数回呼び出しても問題ないので、最初のActivityのonCreateなどで呼び出してください。
 
 
 ### 3. Scanボタンのイベント編集
@@ -56,7 +61,7 @@ scanButton.setOnClickListener(new View.OnClickListener() {
  });
 ```
 
-- ScanActivityはMaBeeeデバイスのスキャンと接続を簡単に実装できるUIを提供します。
+- ScanActivityを使うとMaBeeeデバイスのスキャンと接続を簡単に実装できることができます。
 
 
 ### 4. SeekBarのイベント編集
@@ -86,7 +91,7 @@ seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 ```
 
 - App.getInstance().getDevices()で接続済みのMaBeeeデバイスの配列が取得できます。
-- DeviceクラスのsetPwmDuty関数で、MaBeeeデバイスの出力を0から100の範囲で調整できます。
+- DeviceクラスのsetPwmDuty関数で、MaBeeeデバイスの出力を0%から100%の範囲で調整できます。
 
 
 ### スキャン実行
@@ -100,7 +105,8 @@ seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 ### 接続
 
 - セルをタップすると接続します。
-- 接続すると赤いアイコンになります。
+- 接続が完了すると赤いアイコンになります。
+- バックボタンを押してScanActivityから戻ります。
 
 ### 出力の調整
 
