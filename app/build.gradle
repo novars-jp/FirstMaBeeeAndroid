@@ -19,10 +19,12 @@ android {
 }
 
 repositories {
-    maven {
+    maven { url 'https://raw.github.com/novars-jp/MaBeeeAndroidSDK/master/repository/' }
+
+    /*maven {
         name 'Github'
         url 'https://maven.pkg.github.com/novars-jp/MaBeeeAndroidSDK'
-    }
+    }*/
 }
 
 dependencies {
